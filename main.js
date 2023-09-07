@@ -30,7 +30,6 @@ client.on('reconnect', () => {
 
 client.on('connect', function () {
   console.log('Conectado ao servidor MQTT')
-  client.subscribe('ORIVA/casa/temperatura')
 })
 
 function panelPublish() {
