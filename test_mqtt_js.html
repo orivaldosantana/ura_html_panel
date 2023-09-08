@@ -70,7 +70,7 @@
       client.publish(publishTopic, msg, { qos: 0, retain: false })
       console.log(publishTopic + ': ' + msg)
     }
-    setInterval(updateData, 5000)
+    setInterval(updateData, 3000)
     function updateData() {
       document.getElementById('mqttData').innerHTML =
         'Temperatura: ' + temperatureData
