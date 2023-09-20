@@ -1,6 +1,6 @@
 const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 const host = 'wss://broker.emqx.io:8084/mqtt'
-const publishTopic = 'ORIVA/casa/controleLED'
+const publishTopic = 'URA100/input'
 var ledIsOn = false
 var msg = 'off'
 const options = {
@@ -32,14 +32,9 @@ client.on('connect', function () {
   console.log('Conectado ao servidor MQTT')
 })
 
-function panelPublish() {
-  if (ledIsOn) {
-    msg = 'off'
-    ledIsOn = false
-  } else {
-    msg = 'on'
-    ledIsOn = true
-  }
+
+
+function move(cmd){
   client.publish(publishTopic, msg, { qos: 0, retain: false })
-  console.log(publishTopic + ': ' + msg)
+  console.log(cmd) 
 }
