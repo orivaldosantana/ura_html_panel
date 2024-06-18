@@ -35,6 +35,6 @@ client.on('connect', function () {
 
 
 function move(cmd){
-  client.publish(publishTopic, msg, { qos: 0, retain: false })
+  client.publish(publishTopic, cmd, { qos: 0, retain: false })
   console.log(cmd) 
 }
